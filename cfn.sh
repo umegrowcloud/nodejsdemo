@@ -5,6 +5,6 @@ aws --debug cloudformation create-stack --stack-name "$serviceName-stack" \
     --region 'us-east-1' \
     --parameters ParameterKey=Stage,ParameterValue=dev \
         ParameterKey=ContainerPort,ParameterValue=8080 \
-        ParameterKey=ImageURI,ParameterValue=8080 \
+        ParameterKey=ImageURI,ParameterValue=$ImageURI \
         ParameterKey=ServiceName,ParameterValue=$serviceName \
     --capabilities CAPABILITY_NAMED_IAM
