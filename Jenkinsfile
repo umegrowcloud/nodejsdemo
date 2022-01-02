@@ -4,7 +4,7 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '2')) 
     }
     environment {
-        AWS_ACCOUNT_ID="970950907778"
+        AWS_ACCOUNT_ID="XXXXXXXXXXXXXXXXX"
         AWS_DEFAULT_REGION="us-east-1" 
         IMAGE_REPO_NAME="demo-app"
         IMAGE_TAG="${BUILD_NUMBER}.0"
