@@ -10,8 +10,6 @@ Parameters:
     Type: String
   ServiceName:
     Type: String
-  ServiceVersion:
-    Type: String
 Resources:
 
   # Create an ECS Cluster
