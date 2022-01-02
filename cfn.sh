@@ -1,5 +1,14 @@
 #!/bin/sh
 
+status=`aws cloudformation describe-stacks --stack-name "$serviceName-stack"`
+
+if ! aws cloudformation describe-stacks --stack-name $serviceName-stack ; then
+    echo "1"
+    echo "True"
+else
+    echo "else"
+fi
+
 aws --debug cloudformation update-stack --stack-name "$serviceName-stack" \
     --template-body file://ecs.yaml \
     --region 'us-east-1' \
