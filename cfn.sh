@@ -1,15 +1,13 @@
 #!/bin/sh
 
-status=`aws cloudformation describe-stacks --stack-name "$serviceName-stack"`
-
 if ! aws cloudformation describe-stacks --stack-name $serviceName-stack ; then
     echo "1"
-    echo "True"
+    type_formation='create-stack'
 else
-    echo "else"
+    type_formation='update-stack'
 fi
 
-aws --debug cloudformation update-stack --stack-name "$serviceName-stack" \
+aws --debug cloudformation  $type_formation --stack-name "$serviceName-stack" \
     --template-body file://ecs.yaml \
     --region 'us-east-1' \
     --parameters ParameterKey=Stage,ParameterValue=dev \
