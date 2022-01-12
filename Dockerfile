@@ -1,5 +1,6 @@
 # Specify a base image
-FROM node:alpine 
+# FROM node:alpine 
+FROM public.ecr.aws/docker/library/node:alpine
 WORKDIR /usr/app
 # Install some depenendencies
 COPY ./package.json ./ 
